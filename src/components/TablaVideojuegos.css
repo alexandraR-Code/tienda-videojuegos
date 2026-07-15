@@ -1,0 +1,43 @@
+.tabla-videojuegos {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.tabla-videojuegos th,
+.tabla-videojuegos td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-videojuegos thead {
+    background-color: #222;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .tabla-videojuegos thead {
+        display: none;
+    }
+
+.tabla-videojuegos tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.tabla-videojuegos td {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-videojuegos td::before{
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+}
+}
