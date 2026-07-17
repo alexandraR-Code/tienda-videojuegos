@@ -1,0 +1,92 @@
+.formulario-page {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+}
+
+.formulario-card {
+    width: 100%;
+    max-width: 480px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.75rem 2rem 2rem;
+    text-align: left;
+}
+
+.formulario-card h2 {
+    margin-bottom: 1.25rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+
+.campo-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-h);
+}
+
+.campo-input {
+    padding: 9px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-h);
+    font: inherit;
+}
+
+.campo-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.campo-checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.campo-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+}
+
+.formulario-acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.formulario-acciones .btn {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.formulario-acciones .btn:hover {
+    opacity: 0.85;
+}
+
+.btn-editar {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-cancelar {
+    background: var(--code-bg);
+    color: var(--text-h);
+    border: 1px solid var(--border) !important;
+}
