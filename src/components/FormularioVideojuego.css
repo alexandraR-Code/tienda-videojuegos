@@ -9,7 +9,7 @@
     max-width: 480px;
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 14px;
     box-shadow: var(--shadow);
     padding: 1.75rem 2rem 2rem;
     text-align: left;
@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
 }
 
 .campo-label {
@@ -32,19 +32,61 @@
     color: var(--text-h);
 }
 
-.campo-input {
-    padding: 9px 12px;
-    border-radius: 6px;
+.campo-input,
+.campo-textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
     border: 1px solid var(--border);
     background: var(--bg);
     color: var(--text-h);
     font: inherit;
+    transition: all 0.3s ease;
 }
 
-.campo-input:focus {
+.campo-input:focus,
+.campo-textarea:focus {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* Inputs numéricos limpios: se quitan las flechas nativas del navegador */
+.campo-input[type="number"]::-webkit-inner-spin-button,
+.campo-input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campo-input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.campo-textarea {
+    resize: vertical;
+    min-height: 70px;
+    line-height: 1.5;
+}
+
+.campo-textarea:focus {
+    min-height: 130px;
+}
+
+.error-mensaje {
+    color: #cf222e;
+    font-size: 13px;
+    font-weight: 600;
+    animation: aparecerError 0.3s ease;
+}
+
+@keyframes aparecerError {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .campo-checkbox {
@@ -68,16 +110,17 @@
 .formulario-acciones .btn {
     flex: 1;
     padding: 10px 14px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: none;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: all 0.2s ease;
 }
 
 .formulario-acciones .btn:hover {
     opacity: 0.85;
+    transform: translateY(-1px);
 }
 
 .btn-editar {
@@ -89,4 +132,15 @@
     background: var(--code-bg);
     color: var(--text-h);
     border: 1px solid var(--border) !important;
+}
+
+@media (max-width: 520px) {
+    .formulario-page {
+        padding: 1.25rem 1rem;
+    }
+
+    .formulario-card {
+        padding: 1.4rem 1.25rem 1.5rem;
+        border-radius: 10px;
+    }
 }
